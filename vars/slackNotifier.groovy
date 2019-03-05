@@ -1,8 +1,6 @@
 #!/usr/bin/env groovy
 
 def call(String buildResult) {
-  slackSend failOnError: true, message: "TEST FROM JENKINS"
-
   if ( buildResult == "SUCCESS" ) {
     slackSend failOnError: true, color: "good", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful"
   }
